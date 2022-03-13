@@ -9,16 +9,23 @@ public class Main {
         Thread producer = new Thread(new Runnable() {
             @Override
             public void run() {
-                while (true) {
+            /*    while (true) {
                     producerConsumer.produce();
                 }
-            }
-        });
+            }*/
+                for (int i = 0; i < 10; i++) {
+                    producerConsumer.produce();
+                }
+
+            });
 
         Thread consumer = new Thread(new Runnable() {
             @Override
             public void run() {
-                while (true) {
+            /*    while (true) {
+                    producerConsumer.consume();
+                }*/
+                for (int i = 0; i < 10; i++) {
                     producerConsumer.consume();
                 }
             }
